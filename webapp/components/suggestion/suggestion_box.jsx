@@ -73,7 +73,7 @@ export default class SuggestionBox extends React.Component {
     handleInput(e) {
         const textbox = ReactDOM.findDOMNode(this.refs.textbox);
         const caret = Utils.getCaretPosition(textbox);
-        const pretext = textbox.value.substring(0, caret);
+        const pretext = textbox.value.toLowerCase().substring(0, caret);
 
         GlobalActions.emitSuggestionPretextChanged(this.suggestionId, pretext);
 
